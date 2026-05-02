@@ -10,6 +10,7 @@ function NoteCard({ note }: any) {
         <h2>{title}</h2>
         <h5>{content}</h5>
         <p>{created}</p>
+        <p>{id}</p>
       </div>
     </Link>
   )

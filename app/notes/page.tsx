@@ -1,6 +1,9 @@
 import React from 'react'
 import NoteCard from '../components/NoteCard';
 import Pocketbase from 'pocketbase';
+import Link from 'next/link';
+
+export const dynamicParams = true;
 
 async function getNotes() {
     //This is the manual way
@@ -19,10 +22,20 @@ async function NotesPage() {
 
     return (
         <div>
-            <h1>NotesPage</h1>
-            <div>
+            <h1 style={{'textAlign': 'center'}}>NotesPage</h1>
+            <div style={{
+                'display': 'flex', 
+                'justifyContent': 'space-between',
+                'columnGap': '10px', 
+                'rowGap': '10px',
+                'maxWidth': '600px',
+                'flexWrap': 'wrap',
+                'margin': 'auto auto'
+                }}>
                 {notes?.map((note) => {
-                    return <NoteCard key={note.id} note={note} />
+                    return (
+                        <NoteCard key={note.id} note={note} />
+                    )
                 })}
             </div>
         </div>
